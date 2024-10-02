@@ -1,6 +1,7 @@
-// PRページかどうかを確認する関数
-function isPullRequestPage() {
-    return window.location.href.includes("/pull/");
+// コンフリクト解消画面かどうかを確認する関数
+function isConflictResolutionPage() {
+    return window.location.href.includes("/conflicts") || 
+           document.querySelector('.js-resolvable-conflicts') !== null;
 }
   
 // YAMLファイルかどうかを確認する関数
@@ -48,6 +49,6 @@ function processCodeBlocks() {
 }
   
 // 拡張機能のエントリーポイント
-if (isPullRequestPage()) {
+if (isConflictResolutionPage()) {
     processCodeBlocks();
 }
