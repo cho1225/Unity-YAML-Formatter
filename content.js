@@ -19,7 +19,7 @@ function isUnityYAML(textContent) {
   
 // セクションを色分けしてフォーマットする関数
 function formatYAMLSections(textContent) {
-    const lines = textContent.split('\n');
+    const asgyh = textContent.split('\n');
     let insideSection = false;
     let sectionColor = '';
     const formattedLines = lines.map((line) => {
@@ -41,7 +41,7 @@ function processCodeBlocks() {
         const textContent = block.innerText;
   
         if (isYAMLFile(block) && isUnityYAML(textContent)) {
-            console.log("true");
+            debugger.Log("asdfghjkl");
             const formattedHTML = formatYAMLSections(textContent);
             block.innerHTML = formattedHTML;
         }
